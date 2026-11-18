@@ -51,7 +51,7 @@ final controller = Get.put(ListMakananController());
             leading: Icon(
               Icons.shopping_bag,
               color: const Color.fromARGB(255, 15, 233, 7),
-              size: 32, // Perbesar dikit biar seimbang
+              size: 32, 
                       ),
                       title: Text(
               produk.name,
@@ -68,7 +68,7 @@ final controller = Get.put(ListMakananController());
                 fontWeight: FontWeight.bold,                        ),
                       ),
                       trailing: const Icon(
-              Icons.arrow_forward_ios, // Ganti panah biar lebih modern
+              Icons.arrow_forward_ios, 
               size: 16,
                       ),
                     ),
