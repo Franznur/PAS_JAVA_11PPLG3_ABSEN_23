@@ -13,7 +13,6 @@ class LoginController extends GetxController {
   var isLoading = false.obs;
   var loginModel = Rxn<LoginModel>();
 
-  //method hit API
   Future<void> login() async{
     if(usernameController.text.toString().isEmpty || passwordController.text.toString().isEmpty){
       Get.snackbar("error", "username password nya harus diisi nk ora bool em bledos");
@@ -21,7 +20,7 @@ class LoginController extends GetxController {
 
       try{
 
-        isLoading.value = true; // sebagai tanda di page nya muncul loading widget
+        isLoading.value = true; 
         final url = Uri.parse("https://mediadwi.com/api/latihan/login");
 
         final response = await http.post(url, body: {
@@ -31,7 +30,7 @@ class LoginController extends GetxController {
 
         isLoading.value = false;
         if(response.statusCode == 200){
-          // kita ambil json nya messeage pindah tampilan ke main menu
+
           final data = jsonDecode(response.body);
           if(data['status'] == true){
             Get.snackbar("berhasil", data['message']);
